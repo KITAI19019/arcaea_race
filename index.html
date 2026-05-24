@@ -148,8 +148,9 @@
 
         <form
           class="signup-form"
-          action="https://formsubmit.co/kitaresource.com@gmail.com"
+          action="https://formsubmit.co/ajax/kitaresource@gmail.com"
           method="POST"
+          data-recipient="kitaresource@gmail.com"
         >
           <input type="hidden" name="_subject" value="骤雨溯音杯参赛报名" />
           <input type="hidden" name="_template" value="table" />
@@ -237,6 +238,7 @@
           </div>
 
           <button class="submit-button" type="submit">提交报名信息</button>
+          <div class="form-status" role="status" aria-live="polite"></div>
         </form>
       </section>
     </main>

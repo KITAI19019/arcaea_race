@@ -518,6 +518,42 @@ textarea:focus {
   border: 0;
 }
 
+.submit-button:disabled {
+  cursor: progress;
+  opacity: 0.72;
+}
+
+.form-status {
+  display: none;
+  padding: 14px 16px;
+  border: 1px solid rgba(48, 42, 131, 0.2);
+  background: rgba(83, 110, 232, 0.08);
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+}
+
+.form-status.show {
+  display: block;
+}
+
+.form-status.success {
+  border-color: rgba(44, 137, 88, 0.24);
+  background: rgba(82, 174, 118, 0.1);
+  color: #255b3d;
+}
+
+.form-status.error {
+  border-color: rgba(190, 143, 47, 0.32);
+  background: rgba(190, 143, 47, 0.1);
+}
+
+.form-status a {
+  color: var(--violet);
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 .footer {
   justify-content: space-between;
   gap: 20px;
