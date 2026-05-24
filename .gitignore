@@ -1,0 +1,11 @@
+# Source documents and local-only design references
+*.docx
+*.xlsx
+logo/
+
+# Local preview and QA artifacts
+output/
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
