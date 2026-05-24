@@ -519,8 +519,13 @@ textarea:focus {
 }
 
 .submit-button:disabled {
-  cursor: progress;
-  opacity: 0.72;
+  cursor: not-allowed;
+  opacity: 0.78;
+}
+
+.submit-button.is-disabled {
+  background: #8b89a8;
+  box-shadow: none;
 }
 
 .form-status {
@@ -552,6 +557,51 @@ textarea:focus {
   font-weight: 800;
   text-decoration: underline;
   text-underline-offset: 3px;
+}
+
+@media (min-width: 1180px) {
+  .site-header {
+    padding-inline: max(58px, calc((100vw - 1360px) / 2 + 58px));
+  }
+
+  .hero,
+  .section,
+  .signup-section {
+    padding-left: max(76px, calc((100vw - 1360px) / 2 + 76px));
+    padding-right: max(76px, calc((100vw - 1360px) / 2 + 76px));
+  }
+
+  .hero {
+    grid-template-columns: minmax(640px, 1.08fr) minmax(380px, 460px);
+    align-items: center;
+  }
+
+  .hero-panel {
+    align-self: center;
+  }
+
+  .split {
+    grid-template-columns: minmax(300px, 420px) minmax(680px, 860px);
+    justify-content: center;
+  }
+
+  .pool {
+    grid-template-columns: minmax(340px, 430px) minmax(640px, 820px);
+    justify-content: center;
+  }
+
+  .signup-section {
+    grid-template-columns: minmax(320px, 420px) minmax(660px, 820px);
+    justify-content: center;
+  }
+
+  .signup-form {
+    padding: 38px;
+  }
+
+  .footer {
+    padding-inline: max(76px, calc((100vw - 1360px) / 2 + 76px));
+  }
 }
 
 .footer {

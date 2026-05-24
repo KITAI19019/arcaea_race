@@ -113,9 +113,8 @@
       <section class="section pool" id="pool" aria-labelledby="pool-title">
         <div class="pool-copy">
           <p class="section-kicker">Song Pool</p>
-          <h2 id="pool-title">曲目定数参考</h2>
+          <h2 id="pool-title">分组选曲定数参考</h2>
           <p>
-            曲目定数表来自 ARCAEA 中文维基整理，正表按 FTR 定数降序排列。
             比赛中 ban 曲与随机曲目的定数范围以管理发布的分组说明为准。
           </p>
           <ul class="check-list">
@@ -141,21 +140,16 @@
           <div class="notice">
             <strong>提交说明</strong>
             <p>
-              表单将通过 FormSubmit 转发到邮箱。首次使用时，收件邮箱可能需要点击一次确认邮件来启用转发。
+              报名入口暂未开放。开放时间确定后，管理会在群内发布通知。
             </p>
           </div>
         </div>
 
         <form
           class="signup-form"
-          action="https://formsubmit.co/ajax/kitaresource@gmail.com"
           method="POST"
-          data-recipient="kitaresource@gmail.com"
+          aria-disabled="true"
         >
-          <input type="hidden" name="_subject" value="骤雨溯音杯参赛报名" />
-          <input type="hidden" name="_template" value="table" />
-          <input type="hidden" name="_captcha" value="false" />
-          <input id="nextUrl" type="hidden" name="_next" value="" />
 
           <div class="form-row">
             <label for="playerName">选手名称</label>
@@ -237,8 +231,10 @@
             </label>
           </div>
 
-          <button class="submit-button" type="submit">提交报名信息</button>
-          <div class="form-status" role="status" aria-live="polite"></div>
+          <button class="submit-button is-disabled" type="button" disabled>报名暂未开始</button>
+          <div class="form-status show" role="status" aria-live="polite">
+            报名入口暂未开放。开放时间确定后，管理会在群内发布通知。
+          </div>
         </form>
       </section>
     </main>
