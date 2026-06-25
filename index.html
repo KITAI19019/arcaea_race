@@ -140,15 +140,14 @@
           <div class="notice">
             <strong>提交说明</strong>
             <p>
-              报名入口暂未开放。开放时间确定后，管理会在群内发布通知。
+              提交后页面会自动下载报名 CSV 文件。请将下载的文件上传至赛事群“群应用->文件->报名申请表”文件夹中。
             </p>
           </div>
         </div>
 
         <form
           class="signup-form"
-          method="POST"
-          aria-disabled="true"
+          id="signupForm"
         >
 
           <div class="form-row">
@@ -231,9 +230,9 @@
             </label>
           </div>
 
-          <button class="submit-button is-disabled" type="button" disabled>报名暂未开始</button>
+          <button class="submit-button" type="submit">提交并下载报名表</button>
           <div class="form-status show" role="status" aria-live="polite">
-            报名入口暂未开放。开放时间确定后，管理会在群内发布通知。
+            点击提交后将自动下载 CSV 报名表，请上传至赛事群“群应用->文件->报名申请表”文件夹中。
           </div>
         </form>
       </section>
