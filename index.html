@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="2026 年暑假会客窝第一届“骤雨溯音杯”Arcaea 比赛报名入口与规则说明。"
+      content="2026 年暑假会客窝第一届“骤雨溯音杯”Arcaea 比赛报名已结束，赛事信息与规则仍可查阅。"
     />
-    <title>骤雨溯音杯 | 参赛报名</title>
+    <title>骤雨溯音杯 | 报名已结束</title>
     <link rel="icon" href="assets/logo-icon.png" />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
+  <body data-registration-state="closed">
     <header class="site-header">
       <a class="brand" href="#top" aria-label="骤雨溯音杯首页">
         <img src="assets/logo-icon.png" alt="" />
@@ -20,7 +20,7 @@
       <nav class="nav" aria-label="页面导航">
         <a href="#rules">规则</a>
         <a href="#pool">曲池</a>
-        <a class="nav-cta" href="#signup">报名</a>
+        <a class="nav-cta" id="registrationNav" href="#signup">报名已结束</a>
       </nav>
     </header>
 
@@ -28,16 +28,16 @@
       <section class="hero">
         <div class="hero-backdrop" aria-hidden="true"></div>
         <div class="hero-content">
-          <p class="eyebrow">2026 暑假会客窝 · Arcaea 赛事</p>
+          <p class="eyebrow" id="heroEyebrow">2026 暑假会客窝 · 报名阶段已结束</p>
           <img class="hero-logo" src="assets/logo-main.png" alt="骤雨溯音杯" />
-          <h1>第一届参赛报名入口</h1>
-          <p class="hero-copy">
-            以真实 PTT 分组，在线直播解说，依次完成初赛、晋级赛、淘汰赛与决赛。
-            在雨声与音轨交汇处，留下你的参赛席位。
+          <h1 id="heroTitle">报名落定，静候开赛</h1>
+          <p class="hero-copy" id="heroCopy">
+            第一届“骤雨溯音杯”报名通道现已关闭。感谢每一位选手留下名字，
+            管理员正在核验信息并编排分组，请留意赛事群后续通知。
           </p>
           <div class="hero-actions">
-            <a class="button primary" href="#signup">立即报名</a>
-            <a class="button secondary" href="#rules">查看规则</a>
+            <a class="button primary" id="registrationPrimaryAction" href="#signup">查看报名状态</a>
+            <a class="button secondary" id="registrationSecondaryAction" href="#rules">浏览比赛规则</a>
           </div>
         </div>
         <aside class="hero-panel" aria-label="赛事概要">
@@ -61,12 +61,12 @@
 
       <section class="section intro" aria-labelledby="about-title">
         <div>
-          <p class="section-kicker">报名入口</p>
-          <h2 id="about-title">填写信息后即可提交</h2>
+          <p class="section-kicker" id="aboutKicker">报名状态</p>
+          <h2 id="about-title">本届报名已经结束</h2>
         </div>
-        <p>
-          报名前请确认比赛当天可预留约一小时，并且设备能同时进行腾讯会议与 Arcaea
-          比赛。报名信息将用于分组、赛程沟通与裁判核验。
+        <p id="aboutCopy">
+          报名资料已进入整理阶段，页面不再接收新的参赛申请。已报名选手无需重复提交，
+          分组名单、赛程时间及 Arcaea Link 房间安排将通过赛事群公布。
         </p>
       </section>
 
@@ -131,13 +131,13 @@
 
       <section class="signup-section" id="signup" aria-labelledby="signup-title">
         <div class="signup-copy">
-          <p class="section-kicker">Sign Up</p>
-          <h2 id="signup-title">参赛报名</h2>
-          <p>
-            请务必填写真实 PTT。若比赛中或赛后发现 PTT 作假，无论报高或报低，
-            成绩均可能作废。
+          <p class="section-kicker" id="signupKicker">Registration Closed</p>
+          <h2 id="signup-title">报名已结束</h2>
+          <p id="signupCopyText">
+            参赛信息已封存并进入核验流程。赛事规则与曲池信息仍会保留，
+            方便选手随时查阅。
           </p>
-          <div class="notice">
+          <div class="notice" id="signupNotice" hidden>
             <strong>提交说明</strong>
             <p>
               提交后页面会自动下载报名 CSV 文件。请将下载的文件上传至赛事群“群应用->文件->报名申请表”文件夹中。
@@ -148,6 +148,8 @@
         <form
           class="signup-form"
           id="signupForm"
+          aria-hidden="true"
+          hidden
         >
 
           <div class="form-row">
@@ -235,11 +237,58 @@
             点击提交后将自动下载 CSV 报名表，请上传至赛事群“群应用->文件->报名申请表”文件夹中。
           </div>
         </form>
+
+        <section
+          class="registration-closed-card"
+          id="registrationClosed"
+          aria-labelledby="closed-card-title"
+        >
+          <div class="closed-card-meta">
+            <span>2026 · 第一届</span>
+            <span>STATUS / CLOSED</span>
+          </div>
+          <div class="closed-card-main">
+            <div class="closed-seal" aria-hidden="true">
+              <span>ENTRY</span>
+              <strong>END</strong>
+              <span>受付終了</span>
+            </div>
+            <div class="closed-card-copy">
+              <p class="section-kicker">Registration Closed</p>
+              <h3 id="closed-card-title">本届报名已经结束</h3>
+              <p>
+                感谢每一位选手的关注与参与。报名信息现已进入核验和分组阶段，
+                页面不再接收新的参赛申请。
+              </p>
+            </div>
+          </div>
+          <div class="closed-progress" aria-label="报名结束后的赛事进度">
+            <article>
+              <span>01</span>
+              <strong>名单核验</strong>
+              <p>确认选手信息与参赛条件</p>
+            </article>
+            <article>
+              <span>02</span>
+              <strong>PTT 分组</strong>
+              <p>依据报名情况编排对阵</p>
+            </article>
+            <article>
+              <span>03</span>
+              <strong>赛程公布</strong>
+              <p>后续通知将在赛事群发布</p>
+            </article>
+          </div>
+          <div class="closed-card-note">
+            <strong>请留意赛事群通知</strong>
+            <p>已报名选手无需重复提交；分组名单与比赛时间将以群内公告为准。</p>
+          </div>
+        </section>
       </section>
     </main>
 
     <footer class="footer">
-      <p>2026 年暑假会客窝 · 第一届“骤雨溯音杯”比赛报名入口</p>
+      <p id="footerCopy">2026 年暑假会客窝 · 第一届“骤雨溯音杯”赛事信息页</p>
       <a href="#top">返回顶部</a>
     </footer>
 

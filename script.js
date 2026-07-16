@@ -2,6 +2,71 @@ const pttInput = document.querySelector("#ptt");
 const pttHint = document.querySelector("#pttHint");
 const signupForm = document.querySelector("#signupForm");
 const formStatus = document.querySelector(".form-status");
+const registrationClosed = document.querySelector("#registrationClosed");
+
+const isRegistrationClosed = true;
+
+const setText = (selector, text) => {
+  const element = document.querySelector(selector);
+  if (element) element.textContent = text;
+};
+
+const setLink = (selector, text, href) => {
+  const element = document.querySelector(selector);
+  if (!element) return;
+  element.textContent = text;
+  element.href = href;
+};
+
+const applyRegistrationState = () => {
+  document.body.dataset.registrationState = "closed";
+  document.title = "骤雨溯音杯 | 报名已结束";
+
+  const description = document.querySelector('meta[name="description"]');
+  if (description) {
+    description.content =
+      "2026 年暑假会客窝第一届“骤雨溯音杯”Arcaea 比赛报名已结束，赛事信息与规则仍可查阅。";
+  }
+
+  setText("#registrationNav", "报名已结束");
+  setText("#heroEyebrow", "2026 暑假会客窝 · 报名阶段已结束");
+  setText("#heroTitle", "报名落定，静候开赛");
+  setText(
+    "#heroCopy",
+    "第一届“骤雨溯音杯”报名通道现已关闭。感谢每一位选手留下名字，管理员正在核验信息并编排分组，请留意赛事群后续通知。",
+  );
+  setLink("#registrationPrimaryAction", "查看报名状态", "#signup");
+  setLink("#registrationSecondaryAction", "浏览比赛规则", "#rules");
+  setText("#aboutKicker", "报名状态");
+  setText("#about-title", "本届报名已经结束");
+  setText(
+    "#aboutCopy",
+    "报名资料已进入整理阶段，页面不再接收新的参赛申请。已报名选手无需重复提交，分组名单、赛程时间及 Arcaea Link 房间安排将通过赛事群公布。",
+  );
+  setText("#signupKicker", "Registration Closed");
+  setText("#signup-title", "报名已结束");
+  setText(
+    "#signupCopyText",
+    "参赛信息已封存并进入核验流程。赛事规则与曲池信息仍会保留，方便选手随时查阅。",
+  );
+  setText("#footerCopy", "2026 年暑假会客窝 · 第一届“骤雨溯音杯”赛事信息页");
+
+  const signupNotice = document.querySelector("#signupNotice");
+  if (signupNotice) signupNotice.hidden = true;
+
+  if (signupForm) {
+    signupForm.reset();
+    signupForm.querySelectorAll("input, select, textarea, button").forEach((control) => {
+      control.disabled = true;
+    });
+    signupForm.hidden = true;
+    signupForm.setAttribute("aria-hidden", "true");
+  }
+
+  if (registrationClosed) registrationClosed.hidden = false;
+};
+
+applyRegistrationState();
 
 const rangeHint = (ptt) => {
   if (Number.isNaN(ptt)) return "填写后将显示大致分组提示。";
@@ -72,6 +137,8 @@ const downloadCsv = (csv, playerName) => {
 if (signupForm) {
   signupForm.addEventListener("submit", (event) => {
     event.preventDefault();
+
+    if (isRegistrationClosed) return;
 
     if (!signupForm.reportValidity()) return;
 
