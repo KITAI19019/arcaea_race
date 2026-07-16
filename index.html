@@ -10,7 +10,7 @@
     />
     <title>骤雨溯音杯 | 报名已结束</title>
     <link rel="icon" href="assets/logo-icon.png" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css?v=20260716-closed-final" />
   </head>
   <body data-registration-state="closed">
     <header class="site-header">
@@ -146,98 +146,6 @@
           </div>
         </div>
 
-        <form
-          class="signup-form"
-          id="signupForm"
-          aria-hidden="true"
-          hidden
-        >
-
-          <div class="form-row">
-            <label for="playerName">选手名称</label>
-            <input id="playerName" name="选手名称" autocomplete="nickname" required />
-          </div>
-
-          <div class="form-row two-cols">
-            <div>
-              <label for="ptt">真实 PTT</label>
-              <input
-                id="ptt"
-                name="真实PTT"
-                type="number"
-                step="0.01"
-                min="0"
-                max="13"
-                placeholder="例如 12.25"
-                required
-              />
-              <p class="field-hint" id="pttHint">填写后将显示大致分组提示。</p>
-            </div>
-            <div>
-              <label for="qq">QQ / 联系方式</label>
-              <input id="qq" name="联系方式" autocomplete="tel" required />
-            </div>
-          </div>
-
-          <div class="form-row two-cols">
-            <div>
-              <label for="friendCode">Arcaea 好友码</label>
-              <input id="friendCode" name="Arcaea好友码" inputmode="numeric" />
-            </div>
-            <div>
-              <label for="device">比赛设备</label>
-              <input id="device" name="比赛设备" placeholder="例如 iPad / 手机 / 平板" required />
-            </div>
-          </div>
-
-          <div class="form-row two-cols">
-            <div>
-              <label for="capture">参赛画面</label>
-              <select id="capture" name="参赛画面" required>
-                <option value="">请选择</option>
-                <option>手元</option>
-                <option>屏元</option>
-                <option>手元 + 屏元</option>
-                <option>其他</option>
-              </select>
-            </div>
-            <div>
-              <label for="availability">可参赛时间</label>
-              <input
-                id="availability"
-                name="可参赛时间"
-                placeholder="例如 周末下午 / 晚上 20:00 后"
-                required
-              />
-            </div>
-          </div>
-
-          <div class="form-row">
-            <label for="message">补充说明</label>
-            <textarea
-              id="message"
-              name="补充说明"
-              rows="4"
-              placeholder="如设备限制、直播隐私需求、特殊可用时间等"
-            ></textarea>
-          </div>
-
-          <div class="agreements">
-            <label>
-              <input type="checkbox" name="确认真实PTT" required />
-              <span>我确认填写的 PTT 真实有效，并接受赛事分组与积分规则。</span>
-            </label>
-            <label>
-              <input type="checkbox" name="确认设备条件" required />
-              <span>我确认设备与网络条件可支持腾讯会议和 Arcaea 比赛同时进行。</span>
-            </label>
-          </div>
-
-          <button class="submit-button" type="submit">提交并下载报名表</button>
-          <div class="form-status show" role="status" aria-live="polite">
-            点击提交后将自动下载 CSV 报名表，请上传至赛事群“群应用->文件->报名申请表”文件夹中。
-          </div>
-        </form>
 
         <section
           class="registration-closed-card"
@@ -293,6 +201,6 @@
       <a href="#top">返回顶部</a>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=20260716-closed-final"></script>
   </body>
 </html>
