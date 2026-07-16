@@ -1,3 +1,4 @@
+// Deployment: registration closed 2026-07-16
 const pttInput = document.querySelector("#ptt");
 const pttHint = document.querySelector("#pttHint");
 const signupForm = document.querySelector("#signupForm");
